@@ -39,7 +39,7 @@ class CpfUniqueConstraintValidator extends ConstraintValidator {
       $this->context->addViolation($constraint->message, [
         '%value' => $value,
         '@entity_type' => $entity->getEntityType()->getLowercaseLabel(),
-        '@field_name' => Unicode::strtolower($fieldDefinition->getLabel()),
+        '@field_name' => mb_strtolower($fieldDefinition->getLabel()),
       ]);
     }
   }
